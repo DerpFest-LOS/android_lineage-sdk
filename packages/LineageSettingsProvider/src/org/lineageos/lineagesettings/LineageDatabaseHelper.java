@@ -420,6 +420,21 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
             loadBooleanSetting(stmt, LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                     R.bool.def_qs_show_brightness_slider);
+
+            loadBooleanSetting(stmt, LineageSettings.Secure.BERRY_BLACK_THEME,
+                    R.bool.def_berry_black_theme);
+
+            loadIntegerSetting(stmt, LineageSettings.Secure.NETWORK_TRAFFIC_MODE,
+                    R.integer.def_network_traffic_mode);
+
+            loadBooleanSetting(stmt, LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE,
+                    R.bool.def_network_traffic_autohide);
+
+            loadIntegerSetting(stmt, LineageSettings.Secure.NETWORK_TRAFFIC_UNITS,
+                    R.integer.def_network_traffic_units);
+
+            loadBooleanSetting(stmt, LineageSettings.Secure.PANIC_IN_POWER_MENU,
+                    R.bool.def_panic_in_power_menu);
         } finally {
             if (stmt != null) stmt.close();
         }
@@ -468,6 +483,9 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 loadStringSetting(stmt, LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                         R.string.def_notification_pulse_custom_value);
             }
+
+            loadBooleanSetting(stmt, LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
+                    R.bool.def_navigation_bar_arrow_keys);
         } finally {
             if (stmt != null) stmt.close();
         }
@@ -479,6 +497,8 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
                     + " VALUES(?,?);");
             // Global
+            loadStringSetting(stmt, LineageSettings.Global.GLOBAL_VPN_APP,
+                    R.string.def_global_vpn_app);
         } finally {
             if (stmt != null) stmt.close();
         }
