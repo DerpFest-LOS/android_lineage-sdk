@@ -2859,31 +2859,13 @@ public final class LineageSettings {
         public static final String LOCK_SCREEN_BLUR_ENABLED = "lock_screen_blur_enabled";
 
         /**
-         * Network traffic indicator mode
-         * 0 = Don't show network traffic indicator
-         * 1 = Display up-stream traffic only
-         * 2 = Display down-stream traffic only
-         * 3 = Display both up- and down-stream traffic
+         * Whether or not to hide the network traffic indicator
          * @hide
          */
         public static final String NETWORK_TRAFFIC_MODE = "network_traffic_mode";
 
         /** @hide */
-        public static final Validator NETWORK_TRAFFIC_MODE_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 3);
-
-        /**
-         * Network traffic indicator position
-         * 0 = Start side
-         * 1 = Center
-         * 2 = End side
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_POSITION = "network_traffic_position";
-
-        /** @hide */
-        public static final Validator NETWORK_TRAFFIC_POSITION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 2);
+        public static final Validator NETWORK_TRAFFIC_MODE_VALIDATOR = sBooleanValidator;
 
         /**
          * Whether or not to hide the network traffic indicator when there is no activity
@@ -2907,7 +2889,7 @@ public final class LineageSettings {
 
         /** @hide */
         public static final Validator NETWORK_TRAFFIC_UNITS_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 4);
+                new InclusiveIntegerRangeValidator(0, 1);
 
         /**
          * How to show measurement units in the network traffic indiciator
@@ -2978,7 +2960,6 @@ public final class LineageSettings {
             VALIDATORS.put(BERRY_BLACK_THEME, BERRY_BLACK_THEME_VALIDATOR);
             VALIDATORS.put(GESTURE_BACK_EXCLUDE_TOP, GESTURE_BACK_EXCLUDE_TOP_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_MODE, NETWORK_TRAFFIC_MODE_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_POSITION, NETWORK_TRAFFIC_POSITION_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
