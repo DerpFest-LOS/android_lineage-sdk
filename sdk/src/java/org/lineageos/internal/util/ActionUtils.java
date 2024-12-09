@@ -16,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
@@ -164,5 +165,26 @@ public class ActionUtils {
         }
 
         return null;
+    }
+
+    /**
+     * Displays the Volume Panel.
+     *
+     * @param context the current context, used to retrieve the audio manager service.
+     * @return {@code true} when volume panel is displayed.
+     */
+    public static boolean toggleVolumePanel(Context context) {
+        try {
+            return toggleVolumePanelInternal(context);
+        } catch (RemoteException e) {
+            Log.e(TAG, "Could not display Volume Panel");
+        }
+        return false;
+    }
+
+    private static boolean toggleVolumePanelInternal(Context context) throws RemoteException {
+        AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+        am.adjustVolume(AudioManager.ADJUST_SAME, AudioManager.FLAG_SHOW_UI);
+        return true;
     }
 }
