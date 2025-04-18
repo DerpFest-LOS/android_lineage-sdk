@@ -1751,16 +1751,6 @@ public final class LineageSettings {
                 new InclusiveIntegerRangeValidator(0, 2);
 
         /**
-         * Whether to show the brightness slider in quick settings panel.
-         * 0 = Never, 1 = show when expanded, 2 = show always
-         */
-        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
-
-        /** @hide */
-        public static final Validator QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 2);
-
-        /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * 0 = 0ff, 1 = on
          */
@@ -2234,7 +2224,6 @@ public final class LineageSettings {
             VALIDATORS.put(STATUS_BAR_IME_SWITCHER, STATUS_BAR_IME_SWITCHER_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN,
                     STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR);
-            VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
             VALIDATORS.put(VOLBTN_MUSIC_CONTROLS, VOLBTN_MUSIC_CONTROLS_VALIDATOR);
             VALIDATORS.put(USE_EDGE_SERVICE_FOR_GESTURES,
                     USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR);
@@ -2729,18 +2718,6 @@ public final class LineageSettings {
          * @hide
          */
         public static final String POWER_MENU_ACTIONS = "power_menu_actions";
-
-        /**
-         * Whether to show the brightness slider in quick settings panel.
-         * @hide
-         */
-        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
-
-        /**
-         * Whether to show the auto brightness icon in quick settings panel.
-         * @hide
-         */
-        public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
         /**
          * Global stats collection
